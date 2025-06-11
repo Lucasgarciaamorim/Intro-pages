@@ -1,0 +1,40 @@
+!<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>INTRO POS CONTROLE</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: black;
+        height: 100%;
+        overflow: hidden;
+      }
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <video id="introVideo" autoplay muted loop playsinline>
+      <source src="Intro-page\INTRO_POS_CONTROLE.mp4" type="video/mp4" />
+      Seu navegador não suporta vídeo.
+    </video>
+    <script>
+      const video = document.getElementById("introVideo");
+      video.addEventListener("canplay", () => {
+        if (video.requestFullscreen) {
+          video.requestFullscreen();
+        } else if (video.webkitRequestFullscreen) {
+          video.webkitRequestFullscreen();
+        } else if (video.msRequestFullscreen) {
+          video.msRequestFullscreen();
+        }
+      });
+    </script>
+  </body>
+</html>
